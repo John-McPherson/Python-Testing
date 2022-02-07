@@ -56,6 +56,9 @@ class TestStudent(unittest.TestCase):
     
     def test_get_start_date(self):
         self.assertEqual(self.student.get_start_date, date.today())
+
+    def test_has_extension(self):
+        self.assertFalse(self.student.extension) 
     
 
 
