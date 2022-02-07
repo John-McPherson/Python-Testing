@@ -10,6 +10,7 @@ class Student:
         self._start_date = date.today()
         self.end_date = date.today()+ timedelta(days=365)
         self.naughty_list = False
+        self.extension = False
     
 
     @property
