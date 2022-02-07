@@ -7,7 +7,10 @@ def even_number_of_evens(numbers):
     if the numner of even numbers is even - return True
     """
     if isinstance(numbers, list):
-        return True
+        if numbers == []:
+            return False
+        else:
+            return True
     else: 
         raise TypeError("A list was not passed into the function")
 
