@@ -16,6 +16,9 @@ class Student:
     def full_name(self):
         return f"{self._first_name} {self._last_name}"
     
+    @property
+    def get_start_date(self):
+        return self._start_date
 
     def alert_santa(self):
         self.naughty_list = True
