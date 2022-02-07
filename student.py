@@ -26,6 +26,7 @@ class Student:
 
     def apply_extension(self, extension):
         self.end_date = self.end_date + timedelta(days=15)
+        self.extension = True
 
     def course_schedule(self):
         response = requests.get(
