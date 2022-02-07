@@ -59,6 +59,8 @@ class TestStudent(unittest.TestCase):
 
     def test_has_extension(self):
         self.assertFalse(self.student.extension) 
+        self.student.apply_extension(15)
+        self.assertTrue(self.student.extension) 
     
 
 
