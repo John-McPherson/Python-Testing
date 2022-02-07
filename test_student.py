@@ -1,6 +1,6 @@
 import unittest
 from student import Student
-
+from datetime import date, timedelta
 class TestStudent(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -8,7 +8,7 @@ class TestStudent(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        print("tearDownClass")
+        print("tearDownClassx")
 
     def setUp(self):
         print("setup")
@@ -31,7 +31,10 @@ class TestStudent(unittest.TestCase):
         print("test_get_email")
         self.assertEqual(self.student.email,"john.doe@email.com")
     
-
+    def test_apply_extension(self):
+        print("test_apply_extension")
+        self.student.apply_extension(15)
+        self.assertEqual(self.student.end_date, date.today()+ timedelta(days=380))
 
 
 if __name__ =="__main__":
