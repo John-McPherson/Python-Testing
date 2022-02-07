@@ -2,6 +2,7 @@ import unittest
 from student import Student
 from datetime import date, timedelta
 from unittest.mock import patch
+import time_machine
 
 
 class TestStudent(unittest.TestCase):
@@ -62,6 +63,11 @@ class TestStudent(unittest.TestCase):
         self.student.apply_extension(15)
         self.assertTrue(self.student.extension) 
     
+    def test_leap_year(self):
+        with time_machine.travel(date(2020, 2, 29)):
+            leap_student = Student("John", "Doe")
+            self.assertEqual(leap_student.end_date, date(2021, 3, 1))
+  
 
 
 
