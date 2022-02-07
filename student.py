@@ -1,4 +1,5 @@
 from datetime import date, timedelta
+import requests
 
 class Student:
     """A student class as a base for method testing"""
@@ -21,12 +22,23 @@ class Student:
 
     def apply_extension(self, extension):
         self.end_date = self.end_date + timedelta(days=15)
-    
+
+    def course_schedule(self):
+        response = requests.get(
+            f"https://company.com/course-schedule/{self._last_name}/{self._first_name}")
+
+        if response.ok:
+            return response.text
+        else:
+            return "Something went wrong"
 
 
     @property
     def email(self):
         return f"{self._first_name.lower()}.{self._last_name.lower()}@email.com"
+
+
+
 
 
 
