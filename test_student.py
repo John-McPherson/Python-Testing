@@ -54,6 +54,9 @@ class TestStudent(unittest.TestCase):
             schedule = self.student.course_schedule()
             self.assertEqual(schedule,"Something went wrong")
     
+    def test_get_start_date(self):
+        self.assertEqual(self.student.get_start_date, date.today())
+    
 
 
 
